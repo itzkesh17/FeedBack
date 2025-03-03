@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="icons">
+            <i class="bi bi-star-fill one" id="one"></i>
+            <i class="bi bi-star-fill two" id="two"></i>
+            <i class="bi bi-star-fill three" id="three"></i>
+        </div>
+
+        <div id="text"></div>
+    </div>
+
+    <script>
+        let iconBad = document.getElementById('one');
+        let iconGood = document.getElementById('two');
+        let iconExcellent = document.getElementById('three');
+        let text = document.getElementById('text');
+
+        iconBad.addEventListener('click',()=>{
+            iconBad.style.color = '#6EC207';
+            text.innerHTML = "bad";
+            text.style.transform = 'translate(0)';
+            iconGood.style.color = 'white';
+            iconExcellent.style.color = 'white';
+        })
+        iconGood.addEventListener('click',()=>{
+            text.innerHTML = "good";
+            text.style.transform = 'translate(1%)';
+            iconGood.style.color = '#6EC207';
+            iconBad.style.color = '#6EC207';
+            iconExcellent.style.color = 'white';
+        })
+        iconExcellent.addEventListener('click',()=>{
+            text.innerHTML = "excellent";
+            iconExcellent.style.color = '#6EC207';
+            text.style.transform = 'translate(2%)';
+            iconGood.style.color = '#6EC207';
+            iconBad.style.color = '#6EC207';
+        })
+    </script>
+</body>
+</html>
